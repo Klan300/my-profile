@@ -103,7 +103,7 @@ window.onscroll = function () { myFunction() };
 
 function myFunction() {
     console.log(document.documentElement.scrollTop)
-    if (document.documentElement.scrollTop >= 790 && document.documentElement.scrollTop < 800) {
+    if (document.documentElement.scrollTop >= 790 && document.documentElement.scrollTop < 795) {
         move(85, ".py")
         move(90, ".html")
         move(70, ".css")
