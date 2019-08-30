@@ -101,13 +101,26 @@ window.onload = function () {
 
 window.onscroll = function () { myFunction() };
 
+function loadskill() {
+    move(85, ".py")
+    move(90, ".html")
+    move(70, ".css")
+    move(50, ".js")
+    move(30, ".cpp")
+}
+
+
 function myFunction() {
     console.log(document.documentElement.scrollTop)
-    if (document.documentElement.scrollTop >= 705 && document.documentElement.scrollTop < 714) {
-        move(85, ".py")
-        move(90, ".html")
-        move(70, ".css")
-        move(50, ".js")
-        move(30, ".cpp")
+    if ($(window).width() > 600) {
+        if (document.documentElement.scrollTop >= 700 && document.documentElement.scrollTop < 710) {
+            loadskill()
+        }
+    }
+    else {
+        if (document.documentElement.scrollTop >= 695 && document.documentElement.scrollTop < 700) {
+            loadskill()
+        }
     }
 }
+
