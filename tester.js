@@ -45,13 +45,23 @@ function move(width_max, id) {
     var width = 20;
     var id = setInterval(frame, 10);
     function frame() {
-
-        if (width >= width_max) {
-            clearInterval(id);
-        } else {
-            width++;
-            elem.style.width = width + '%';
-            elem.innerHTML = id_name + width * 1 + '%';
+        if ($(window).width() > 600) {
+            if (width >= width_max) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                elem.innerHTML = id_name + width * 1 + '%';
+            }
+        }
+        else {
+            if (width >= width_max) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                elem.innerHTML = width * 1 + '%';
+            }
         }
     }
 }
@@ -76,7 +86,7 @@ window.onload = function () {
         css.type = "text/css";
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
-    } 
+    }
     else {
         $(".wrap").html(`<p>Hi, My Name is Nathun</p>
         <p>I am Developer</p>

@@ -121,6 +121,10 @@ section {
     margin-bottom: 100px;
 }
 
+.re {
+    margin-top: 0px;
+}
+
 .control-image {
     width: 100%;
     display: flex;
@@ -204,12 +208,16 @@ a:hover {
 
     }
     .my {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         margin: 0px;
         margin-top: 30px;
     }
     .h2 {
         font-size: 10px;
+    }
+    .re {
+       padding-top: 30px;
+       font-size: 15px;
     }
 }
