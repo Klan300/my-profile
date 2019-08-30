@@ -40,49 +40,64 @@ TxtType.prototype.tick = function () {
 };
 
 function move(width_max, id) {
-    var id_name = id + "  " 
+    var id_name = id + "  "
     var elem = document.getElementById(id);
     var width = 20;
     var id = setInterval(frame, 10);
     function frame() {
-        
+
         if (width >= width_max) {
             clearInterval(id);
         } else {
             width++;
-            elem.style.width =  width + '%';
+            elem.style.width = width + '%';
             elem.innerHTML = id_name + width * 1 + '%';
         }
     }
 }
 
+function ChangeWord(newword, id) {
+    $(id).text(newword)
+}
 
 
 window.onload = function () {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-            new TxtType(elements[i], JSON.parse(toRotate), period);
+    if ($(window).width() > 600) {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
         }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    } 
+    else {
+        $(".wrap").html(`<p>Hi, My Name is Nathun</p>
+        <p>I am Developer</p>
+        <p>Welcome to My Profile</p>`)
     }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
+
+    if ($(window).width() <= 600) {
+        ChangeWord("Swipe Up", ".scrollup")
+    }
+
 };
 
 window.onscroll = function () { myFunction() };
 
 function myFunction() {
     console.log(document.documentElement.scrollTop)
-    if (document.documentElement.scrollTop  >= 790 && document.documentElement.scrollTop < 800) {
-       move(85,".py")
-       move(90,".html")
-       move(70,".css")
-       move(50,".js")
-       move(30,".cpp")
+    if (document.documentElement.scrollTop >= 790 && document.documentElement.scrollTop < 800) {
+        move(85, ".py")
+        move(90, ".html")
+        move(70, ".css")
+        move(50, ".js")
+        move(30, ".cpp")
     }
 }
