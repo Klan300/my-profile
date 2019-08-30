@@ -84,6 +84,5 @@ function myFunction() {
        move(70,".css")
        move(50,".js")
        move(30,".cpp")
-       console.log(document.documentElement.scrollTop)
     }
 }
