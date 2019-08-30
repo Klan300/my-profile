@@ -203,6 +203,11 @@ a:hover {
         padding-bottom: 200px;
     }
 
+    .skill {
+        padding-bottom: 30px;
+        margin-top: 20px;
+    }
+
     .myskill {
         padding: 30px 0 30px 0;
 
@@ -219,5 +224,36 @@ a:hover {
     .re {
        padding-top: 30px;
        font-size: 15px;
+    }
+
+    .myimage {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .detail {
+        width: 85%;
+    }
+    
+    .mind {
+        font-size: 15px;
+    }
+    .name {
+        padding-left: 20px;
+        margin-top: 90px;
+        padding-bottom: 20px;
+    }
+
+    .online {
+        padding-top: 22px;
+    }
+
+
+    .online-contact {
+        padding-left: 10px;
+    }
+    
+    .dom {
+        font-size: 18px;
     }
 }
