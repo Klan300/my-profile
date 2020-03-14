@@ -99,7 +99,13 @@ window.onload = function () {
 
 };
 
-window.onscroll = function () { myFunction() };
+var count = 0;
+
+window.onscroll = function () {
+    if (count == 0){
+        count = myFunction(count) 
+    }
+};
 
 function loadskill() {
     move(85, ".py")
@@ -110,17 +116,20 @@ function loadskill() {
 }
 
 
-function myFunction() {
+function myFunction(val) {
     console.log(document.documentElement.scrollTop)
     if ($(window).width() > 600) {
         if (document.documentElement.scrollTop >= 700 && document.documentElement.scrollTop < 710) {
             loadskill()
+            val += 1
         }
     }
     else {
         if (document.documentElement.scrollTop >= 695 && document.documentElement.scrollTop < 700) {
             loadskill()
+             val += 1
         }
     }
+    return val
 }
 
