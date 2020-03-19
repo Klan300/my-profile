@@ -151,8 +151,7 @@ function animateEducate(val,top){
         var y = document.getElementsByClassName("schoolimg ")
         for (var i = 0; i < x.length; i++) {
             x[i].style.cssText = "transition: opacity 2s; height : 200px; opacity : 1;";
-            y[i].style.cssText = "transition: height 1s; height:200px;";
-
+            y[i].style.cssText = "transition: height 2s; height:200px;";
         }
         val += 1;
     }
