@@ -146,7 +146,7 @@ function myFunction(val) {
 
 
 function animateEducate(val,top){
-    if (top > 1050){
+    if (top > 1200){
         var x = document.getElementsByClassName("flex-ed")
         var y = document.getElementsByClassName("schoolimg ")
         for (var i = 0; i < x.length; i++) {
