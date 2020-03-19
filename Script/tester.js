@@ -100,11 +100,17 @@ window.onload = function () {
 };
 
 var count = 0;
+var countEducation = 0;
 
 window.onscroll = function () {
+    var top = document.documentElement.scrollTop
     if (count == 0){
         count = myFunction(count) 
     }
+    if (countEducation == 0){
+        countEducation = animateEducate(countEducation,top)
+    }
+
 };
 
 
@@ -124,7 +130,7 @@ function loadskill() {
 function myFunction(val) {
     console.log(document.documentElement.scrollTop)
     if ($(window).width() > 600) {
-        if (document.documentElement.scrollTop >= 700 && document.documentElement.scrollTop < 710) {
+        if (document.documentElement.scrollTop > 710) {
             loadskill()
             val += 1
         }
@@ -136,5 +142,20 @@ function myFunction(val) {
         }
     }
     return val
+}
+
+
+function animateEducate(val,top){
+    if (top > 1050){
+        var x = document.getElementsByClassName("flex-ed")
+        var y = document.getElementsByClassName("schoolimg ")
+        for (var i = 0; i < x.length; i++) {
+            x[i].style.cssText = "transition: opacity 2s; height : 200px; opacity : 1;";
+            y[i].style.cssText = "transition: height 1s; height:200px;";
+
+        }
+        val += 1;
+    }
+    return val;
 }
 
