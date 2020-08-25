@@ -193,8 +193,6 @@ a:hover {
     text-align: center;
 }
 
-.education{}
-
 .quote {
     font-size: 30px;
     padding-top: 20px;
@@ -239,6 +237,21 @@ a:hover {
 .content {
     width: 100%;
     text-align: center;
+}
+
+.head{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+
+}
+
+.myin {
+    size: 60px;
 }
 
 @keyframes hide {
